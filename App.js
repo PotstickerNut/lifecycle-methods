@@ -9,9 +9,12 @@ class App extends React.Component {
 
   componentDidMount() {
     console.log("Hello from Component did mount");
-    fetch("https://jsonplaceholder.typicode.com/todos")
-      .then((response) => response.json())
-      .then((json) => this.setState({ todos: json }));
+    fetch(
+      "https://api.giphy.com/v1/gifs/trending?api_key=yIooyDxILHyVMvOrMOc6FvIWMCN6Tjzc&limit=25&rating=g"
+    )
+      .then((response) => response.json()) // parse request
+      .then((json) => console.log(json));
+    //   .then((json) => this.setState({ todos: json })); //get data
   }
 
   componentDidUpdate() {
